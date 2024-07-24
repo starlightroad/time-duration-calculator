@@ -37,7 +37,7 @@ function Panel({ data }: { data?: Time }) {
   ]);
 
   return (
-    <div className="mb-4 w-full rounded-xl border border-indigo-600 bg-indigo-50 p-3 text-center text-indigo-600">
+    <div className="mb-4 w-full rounded-xl border border-indigo-600 bg-indigo-50 p-3 text-center text-indigo-600 dark:bg-indigo-500 dark:bg-opacity-10">
       <p className="flex justify-center gap-2">
         <span>
           {data?.days} {formatTimeStr('days', data?.days)}
@@ -131,7 +131,10 @@ export default function Calculator() {
       {!store.calculator.panel.hidden && <Panel data={store.calculator.calculation} />}
       <Form onSubmit={handleSubmit(onSubmit)} onReset={() => onReset()} className="grid gap-4">
         <div className="flex flex-col gap-2">
-          <Label htmlFor="startTime" className="font-medium text-gray-600">
+          <Label
+            htmlFor="startTime"
+            className="font-medium text-gray-600 dark:text-white dark:text-opacity-85"
+          >
             Start Time
           </Label>
           <input
@@ -140,11 +143,14 @@ export default function Calculator() {
             type="text"
             placeholder="09:00 AM"
             autoComplete="off"
-            className="block h-10 w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 text-gray-600 ring-indigo-600 focus-within:ring-2 focus-within:ring-offset-2 focus:outline-none"
+            className="block h-10 w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 text-gray-600 ring-indigo-600 focus-within:ring-2 focus-within:ring-offset-2 focus:outline-none dark:border-opacity-10 dark:bg-opacity-5 dark:text-white dark:text-opacity-85 dark:ring-offset-black"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <Label htmlFor="endTime" className="font-medium text-gray-600">
+          <Label
+            htmlFor="endTime"
+            className="font-medium text-gray-600 dark:text-white dark:text-opacity-85"
+          >
             End Time
           </Label>
           <input
@@ -153,19 +159,19 @@ export default function Calculator() {
             type="text"
             placeholder="05:00 PM"
             autoComplete="off"
-            className="block h-10 w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 text-gray-600 ring-indigo-600 focus-within:ring-2 focus-within:ring-offset-2 focus:outline-none"
+            className="block h-10 w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 text-gray-600 ring-indigo-600 focus-within:ring-2 focus-within:ring-offset-2 focus:outline-none dark:border-opacity-10 dark:bg-opacity-5 dark:text-white dark:text-opacity-85 dark:ring-offset-black"
           />
         </div>
         <div className="mt-2">
           <Button
             type="submit"
-            className="h-10 w-full appearance-none rounded-lg bg-indigo-600 px-4 font-medium text-white focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 focus:outline-none"
+            className="h-10 w-full appearance-none rounded-lg bg-indigo-600 px-4 font-medium text-white focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 focus:outline-none dark:border-opacity-10 dark:ring-offset-black"
           >
             Calculate
           </Button>
           <Button
             type="reset"
-            className="mt-2 h-10 w-full appearance-none rounded-lg px-4 font-medium text-indigo-600 focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:bg-indigo-50 focus:outline-none"
+            className="mt-2 h-10 w-full appearance-none rounded-lg px-4 font-medium text-indigo-600 focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:bg-indigo-50 focus:outline-none dark:border-opacity-10 dark:ring-offset-black dark:hover:bg-opacity-5"
           >
             Reset
           </Button>
